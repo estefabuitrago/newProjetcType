@@ -1,0 +1,222 @@
+$font-title:#0E5F8E;
+$font-text:black;
+$backgroung:#f6f6f6;
+$card1:#D2EAF8;
+$card2:#D2EFB9;
+$card3:#F8D4C0;
+
+.content{
+    background-color: $backgroung;
+}
+
+.home-admin{
+    color: $font-text;
+    font-size: 1em;
+}
+
+@mixin buttons($color){
+    padding: 3% 0%;
+    border-radius: 5px;
+    width: 60%;
+    background-color: $color;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+}
+
+@mixin Icons($color){
+    width: 35px;
+    height: 35px;
+    background-color: $color;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin center($display,$justify-c,$align,$justify-i){
+    display: $display;
+    justify-content: $justify-c;
+    align-items: $align;
+    justify-items: $justify-i;
+}
+
+.title-home{
+    font-size: 2.5rem;
+    border-bottom: 2px solid $font-title ;
+    font-weight: bold;
+}
+
+.title-info-home{
+    color: $font-title;
+}
+
+.home-admin{
+    padding: 2% 5%;
+    width: 100%;
+}
+
+.separate{
+    justify-content: space-between;
+}
+
+.user-home{
+    background-color: white;
+    padding: 1%;
+    border-radius: 10px;
+    position: relative;
+    height: 20vh;
+    margin-bottom: 5%;
+    @include center(flex,normal ,center,normal);
+}
+
+.img-admin{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    bottom: 0.5px;
+    right: 0;
+}
+
+.photo-user{
+    border-radius: 10px;
+}
+
+.user-profile{
+    margin-top: 100px;
+}
+
+.text-welcome{
+    color: $font-title;
+    font-size: 3em;
+    font-weight: bold;
+    margin-left: 5%;
+}
+
+.profile-home{
+    background-color: white;
+    border-radius: 10px;
+    @include center(flex,normal ,center,normal);
+    flex-direction: column;
+    padding: 2%;
+}
+
+.photo{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 5%;
+}
+
+.photo-user{
+    border-radius: 50%;
+}
+
+.title-profile{
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.title-quick-link{
+    font-size: 2em;
+    color: #0d5e8e;
+    margin: 3%;
+    width: 94%;
+    border-bottom: 2px solid;
+}
+
+.quick-link{
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+
+.card-quick-link{
+    margin-bottom: 2%;
+    border-radius: 10px;
+    padding: 2%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center
+}
+
+.btn-quick-link1{
+    @include buttons($card1);
+}
+
+.btn-quick-link2{
+    @include buttons($card2);
+}
+
+.btn-quick-link3{
+    @include buttons($card3);
+}
+
+.icono-quick1{
+    @include Icons($card1)
+}
+
+.icono-quick2{
+    @include Icons($card2)
+}
+
+.icono-quick3{
+    @include Icons($card3)
+}
+
+.info-card-home{
+    @include center(grid,center,normal,center);
+}
+
+.data-totals{
+    @include center(flex,center,center,normal);
+    margin-top: 20%;
+    width: 100%;
+}
+
+.data-icon-color1,.data-icon-color2{
+    width: 70px;
+    height: 70px;
+    background-color: $card1;
+    border-radius: 50%;
+    @include center(flex,center ,center,normal );
+}
+
+.data-icon-color1{
+    background-color: $card1;
+}
+
+.data-icon-color2{
+    background-color: $card2;
+}
+
+.data-icon{
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    border-radius: 50%;
+    @include center(flex,center ,center,normal );
+}
+
+.icon-totals{
+    font-size: 2.5em;
+    color: #626262;
+}
+
+.data-info{
+    @include center(flex,center ,center,normal );
+    flex-direction: column;
+    width: 60%;
+    text-align: center;
+}
+
+.number-data1{
+    color: $card1;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.number-data2{
+    color: $card2;
+    font-weight: bold;
+    font-size: 2em;
+}
