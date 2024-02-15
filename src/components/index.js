@@ -1,5 +1,7 @@
-import { CardsHome } from "./CardsHome";
+import MenuAdmin from "./MenuAdmin";
+import {CardsHome} from "./CardsHome";
 
 export {
+    MenuAdmin,
     CardsHome
 }
