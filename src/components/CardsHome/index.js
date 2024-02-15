@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 
 export const CardsHome = ({title,Icon,link,style}) => {
     return ( 
@@ -8,6 +9,7 @@ export const CardsHome = ({title,Icon,link,style}) => {
                 </div>
                 <p>{title}</p>
             </div>
+            <p><Link className={`btn-quick-link${style}`} to="/rutas">Rutas</Link></p>
             {/* <Link className={`btn-quick-link${style}`} href={link}>Ir</Link> */}
             
         </div>
