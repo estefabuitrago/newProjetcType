@@ -1,7 +1,6 @@
 "use client";
 import React from 'react'
-import { CardsHome } from '../../../components';
-// import MenuAdmin from '@/app/src/Components/navAdmin/page'
+import { CardsHome,MenuAdmin } from '../../../components';
 import { homeAdmin } from '../../../theme'
 // import ImageAdmin from '@/app/src/Assets/img/admin.png'
 // import PhotoUser from '@/app/src/Assets/img/user4.jpg'
@@ -19,7 +18,7 @@ const HomeAdmin = () => {
     return ( 
         <div className='content'>
             <div className='menu-component'>
-                {/* <MenuAdmin/>       */}
+                <MenuAdmin/>      
             </div>
             <div className='home-admin'>
                 <div className='title-info-home title-home'>
