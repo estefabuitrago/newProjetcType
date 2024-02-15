@@ -19,25 +19,16 @@ const MenuUser = () => {
         </div>
         <div className={`menu-content-user${openMenu ? "-open" : ""}`}>
           <div className="ul-menu no-cell">
-            {/* <Link className="link-menu-right" href={routers.homeUser}>
-              Inicio
-            </Link> */}
-            <Link to="/rutas">Inicio</Link>
+            <Link to="/" className="link-menu-right">Inicio</Link>
           </div>
           <div className="ul-menu no-cell">
-            {/* <Link className="link-menu-right" href={routers.routersUser}>
-              Rutas
-            </Link> */}
+            <Link to="/rutas" className="link-menu-right">Rutas</Link>
           </div>
           <div className="ul-menu no-cell">
-            {/* <Link className="link-menu" href={routers.serviceUser}>
-              Servicios
-            </Link> */}
+          <Link to="/servicios" className="link-menu-right">Servicios</Link>
           </div>
           <div className="ul-menu no-cell">
-            {/* <Link className="link-menu-right" href={routers.saleUser}>
-              Tienda
-            </Link> */}
+          <Link to="/tienda" className="link-menu-right">Tienda</Link>
           </div>
           {/* {auth.token !== "rosk" ? (
             <>
