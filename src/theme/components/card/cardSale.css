@@ -1,0 +1,48 @@
+.card-sale,.card-sale .col-5{
+    height: 100%;
+    position: relative;
+    background-color: #E5DBD4;
+    border-radius: 20px;
+    font-size: 1.3rem;
+  }
+  
+  .btn-card-products{
+    background: #F28A4E;
+    color: white;
+    padding: 1%;
+    border-radius: 10px;
+    width: 60%;
+    margin-top: 5%;
+  }
+  
+  .btn-card-products:hover{
+    background: white;
+    color: #F28A4E;
+  }
+  
+  .img-products-store{
+    height: 60%;
+    border-radius: 15px;
+  }
+  
+  .card-sale p{
+    height: auto;
+  }
+    
+  .container-cardsSale{
+    display: flex;
+  }
+  
+  .name-products-store{
+   color: #422B25;
+   margin-bottom: 3% !important;
+   font-weight: 600;
+   font-size:1.5rem;
+  }
+    
+  @media (max-height: 770px) {
+    .btn-card-products{
+      width:90%
+    }
+  }
+    /*# sourceMappingURL=card.css.map */
