@@ -2,7 +2,7 @@ import React from 'react'
 import { MenuAdmin } from '../../../../components';
 import { sale } from '../../../../theme'
 import { Link } from 'react-router-dom';
-import { resources,api } from '../../../../utils'
+import { resources,api } from '../../../../utils/sdk'
 
 const Sale = () => {
 
