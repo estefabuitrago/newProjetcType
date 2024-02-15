@@ -1,3 +1,4 @@
+import MenuAdmin from "./MenuAdmin";
 import { CardsHome } from "./CardsHome";
 import MenuUser from "./MenuUser";
 import { Button } from "./Button";
@@ -6,7 +7,7 @@ import { IconoMouse } from './IconoMouse';
 import { Card } from './Card'; 
 import { Footer } from './Footer'; 
 
-export {
+    MenuAdmin,
     CardsHome,
     MenuUser,
     Button,
