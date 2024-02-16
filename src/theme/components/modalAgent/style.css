@@ -1,0 +1,75 @@
+.modal-agent, .modal-add-product {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 3%;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.modal-agent {
+  min-width: 35%;
+  min-height: 60%;
+  max-width: 80%;
+}
+
+.modal-add-product {
+  width: 80%;
+}
+
+.titulo-modal {
+  background-color: orange;
+  color: white;
+  font-size: 180%;
+  font-weight: 500;
+  -webkit-clip-path: polygon(0% 0%, 60% 0%, 58% 100%, 2% 100%);
+          clip-path: polygon(0% 0%, 60% 0%, 58% 100%, 2% 100%);
+  background-image: linear-gradient(to right, #EF7935, #ECA881);
+  margin-top: 0%;
+  padding-left: 5%;
+  margin-bottom: 5%;
+}
+
+.info-agent {
+  display: flex;
+}
+
+.sub-modal {
+  color: #ECA881;
+  font-size: 150%;
+  font-weight: 500;
+}
+
+.text {
+  font-size: 150%;
+  color: #264350;
+  font-weight: 600;
+}
+
+.text2 {
+  font-size: 150%;
+  color: #26434D;
+}
+
+.circle-image-modal {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.close-button {
+  position: absolute;
+  color: #264350;
+  font-size: 30px;
+  top: 10px;
+  right: 5%;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.modal {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { MenuAdmin } from '../../../../components';
 import { sale } from '../../../../theme'
 import { Link } from 'react-router-dom';
@@ -54,6 +54,7 @@ const Sale = () => {
             <td>3000000000</td>
             <td>3000000000</td>
             <td>
+                <Link to="recibo/1">Ver recibo</Link>
               {/* <Link href={`/src/Page/Admin/Store/Sale/${item.id}`}>Ver recibo</Link> */}
               {/* <Link
                     className="btn-edit"

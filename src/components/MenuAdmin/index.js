@@ -72,7 +72,7 @@ const MenuAdmin = () => {
                 <Link className="link-menu" to="/ventas">Ventas</Link>
                 </div>
                 <div className="ul-sub-menu">
-                <Link className="link-menu" to="/rutas">Inventario</Link>
+                <Link className="link-menu" to="/inventario">Inventario</Link>
                 </div>
               </div>
             ) : (
@@ -80,10 +80,10 @@ const MenuAdmin = () => {
             )}
           </div>
           <div className="ul-menu">
-            <Link className="link-menu" to="/rutas"><ListIcon className="icono" />{menu ? " Categorias" : ""}</Link>
+            <Link className="link-menu" to="/categorias"><ListIcon className="icono" />{menu ? " Categorias" : ""}</Link>
           </div>
           <div className="ul-menu">
-            <Link className="link-menu" to="/rutas"><SourceIcon className="icono" />{menu ? " Publicaciones" : ""}</Link>
+            <Link className="link-menu" to="/publicaciones"><SourceIcon className="icono" />{menu ? " Publicaciones" : ""}</Link>
           </div>
           <div className="ul-menu">
             <Link className="link-menu" to="/rutas"><PeopleAltOutlinedIcon className="icono" />{menu ? " Usuarios" : ""}</Link>
