@@ -1,0 +1,26 @@
+@mixin Button($color,$background1,$background2){
+    color: $color;
+    font-size: 2rem;
+    font-weight: 500;
+    clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+    background-image: linear-gradient(to right, $background1, $background2); 
+    padding: 0% 2%;
+    text-decoration: none;
+}
+
+.button-orange{
+    @include Button(white,#EF7935,#ECA881)
+}
+
+.button-green{
+    @include Button(white,#4A9B64,#87A760 )
+}
+
+.button-blue{
+    @include Button(white,#18567F,#98BCE6)
+}
+
+.button-orange,.button-blue,.button-green a{
+    text-decoration: none;
+    color: white;
+}

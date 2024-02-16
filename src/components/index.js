@@ -7,6 +7,7 @@ import { IconoMouse } from './IconoMouse';
 import { Card } from './Card'; 
 import { Footer } from './Footer'; 
 
+export {
     MenuAdmin,
     CardsHome,
     MenuUser,
