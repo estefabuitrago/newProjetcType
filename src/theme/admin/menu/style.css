@@ -82,9 +82,7 @@
 }
 
 .btn-menu {
-  background-color: transparent;
-  border:none;
-  color: white;
+  background-color: none;
 }
 
 @media (max-width: 700px) {
