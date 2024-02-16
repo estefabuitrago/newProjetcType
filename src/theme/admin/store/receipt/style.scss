@@ -1,0 +1,79 @@
+.receipt {
+    width: 85%;
+    padding: 2% 2%;
+}
+.headerReceipt{
+    width: auto;
+    display: flex;
+    margin-top: 30px;
+    width: 50%;
+}
+.headerReceipt2{
+    width: auto;
+    display: flex;
+    margin-top: 30px;
+    width: 900px;
+}
+.p1{
+    flex-grow: 1;
+    font-size: 22px;
+    color: #264350;
+    font-weight: bolder;
+}
+.p2{
+    flex-grow: 1;
+    font-size: 22px;
+    color: #26434D;
+    margin-right: 40px;
+}
+.p3{
+    flex-grow: 1;
+    font-size: 22px;
+    color: #0E5F8E;
+    font-weight: bolder;
+    margin-top: 15px;
+}
+.tableReceipt{
+    width: 100%;
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    padding-top: 3%;
+}
+.bodyTableReceipt{
+    padding: 2%;
+}
+.bodyTableReceipt td{
+    border-top: 2px solid #0E5F8E;
+    font-size: 22px;
+    padding-top: 10px;
+    align-items: center;
+    padding-left: 20px;
+}
+.btnReceipt{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding-top: 3%;
+}
+.buttonReceipt{
+    background-color: #0E5F8E;
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    border-radius: 5px;       
+    padding: 15px 20px;
+
+}
+.btnReturn{
+    margin-right: 10%;
+    background-color: #FE9A61;
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+    border-radius: 5px; 
+    padding: 15px 20px;
+    text-decoration: none;
+}

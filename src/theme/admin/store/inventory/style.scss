@@ -1,0 +1,129 @@
+$color-btn:#0E5F8E;
+$color:#0a3f5e;
+
+.img-products{
+    height: 200px;
+    width: 200px;
+}
+
+.show-product{
+    padding: 2% 0%;
+    border-bottom: 0.5px solid black;
+}
+
+.btn-add-product{
+    color: $color-btn;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 5%;
+}
+
+.info-product{
+    color: $color;
+}
+
+.name-product{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.btn-edit-product{
+    display: flex;
+    width: 100%;
+    margin-bottom: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.text-field-products{
+    margin-bottom: 2% !important;
+}
+
+.file-add-product{
+    background-color: lightgray;
+    color: white;
+}
+
+.file-add-product div{
+    height: 100%;
+}
+
+.button-add-image{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    font-size: 1.5rem;
+}
+
+.button-add-image svg{
+    font-size: 5rem;
+    margin-bottom: 5%;
+}
+
+.button-add-image button{
+    background:rgb(226, 224, 224);
+    padding: 2%;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.btn-delete-cart{
+    color: #ff0000;
+    font-size: 2em;
+}
+
+.cart{
+    padding: 10%;
+}
+.empty-cart-message {
+    color: red;
+    text-align: center;
+    margin-top: 20vh;
+  }
+
+  .img-inventory{
+    width:250px;
+    height: 250px;
+  }
+  .payu{
+    width: 20%;
+    height: 10%;
+  }
+  .runway{
+    width: 100%;
+    text-align: right;
+    
+  }
+  .runway p b{
+    font-size: 30px;
+    
+  }
+  .runway h3{
+    text-align: center;
+  }
+  .runway button img{
+    display: block;
+    margin: 0 auto;
+}
+
+  .loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+

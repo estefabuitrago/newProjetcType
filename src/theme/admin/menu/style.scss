@@ -1,0 +1,123 @@
+$main-color:#0E5F8E;
+$secondary-color: white;
+$size-icon:1.8rem;
+$size-font:1.2rem;
+
+.Menu-a{
+    display: flex;
+    align-items: flex-start;
+    position: sticky;
+    top: 0;
+}
+
+.menu-admin{
+    background-color: $main-color;
+    text-align: left;
+    width: 8vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    color: $secondary-color;
+    padding: 2% 1%;
+    font-size: $size-font;
+    transition: width 0.5s;
+}
+
+.menu-logo{
+    height: 20%;
+    padding: 10%
+}
+
+.logo{
+    background-color: $secondary-color;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    text-align: center;
+    color: $main-color;
+    margin-bottom: 50%;
+}
+
+.icono{
+    font-size: $size-icon;
+    color: $secondary-color;
+}
+
+.menu-content{
+    height: 80%;
+    display: grid;
+    flex-direction: column;
+}
+
+.open{
+    width: 13vw;
+    color: white;
+}
+
+.toggle-menu{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid $main-color;
+    margin-left: 1%;
+    margin-top: 1%;
+    background-color: #f6f6f6;
+}
+
+.icon-toggle{
+    color: $main-color;
+}
+
+.sub-ul{
+    border-left: 0.5px solid $secondary-color;
+    padding-left: 5%;
+    margin-left: 20%;
+}
+
+.content{
+    display: flex;
+    overflow: inherit;
+    overflow-x: clip;
+}
+
+.link-menu{
+    color: white;
+    text-decoration: none;
+}
+
+.btn-menu{
+    background-color: transparent;
+    border:none;
+    color: white;
+}
+
+@media (max-width: 700px) {
+
+    .content{
+        display: block;
+        position: relative;
+    }
+
+    .menu-component{
+        position: absolute;
+        z-index: 100;
+    }
+
+    .open{
+        width: 45vw;
+        margin-left: 27%;
+    }
+
+    .Menu{
+        margin-left: -38%;
+    }
+
+    .menu-admin{
+        font-size: 1rem;
+    }
+
+    .icono{
+        font-size: 1.5rem;
+    }
+}
