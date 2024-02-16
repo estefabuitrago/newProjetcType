@@ -1,0 +1,105 @@
+$colorCard1:#D2EAF8;
+$btnCard1:#5499C2;
+$colorCard2:#D2EFB9;
+$btnCard2:#93C567;
+$colorCard3:#F9E2B0;
+$btnCard3:#EBC980;
+$colorCard4:#F8D4C0;
+$btnCard4:#E8AA88;
+
+.card{
+    height: 350px;
+    margin: 2%; //quitar
+    border: none;
+    position: relative;
+    
+}
+.container-cards{
+    padding: 0%;
+    margin-left: 0% !important;
+}
+
+.card-html{
+    min-height: 300px;
+    margin-bottom: 2%;
+}
+
+.card-html table p{
+    font-size: 1.2rem
+}
+
+.card-html:nth-child(4n+1){
+    background-color: $colorCard1;
+}
+
+.card-html:nth-child(4n+1) .btn-card{
+    background-color: $btnCard1;
+}
+
+.card-html:nth-child(4n+2){
+    background-color: $colorCard2;
+}
+
+.card-html:nth-child(4n+2) .btn-card{
+    background-color: $btnCard2;
+}
+
+.card-html:nth-child(4n+3){
+    background-color: $colorCard3;
+}
+
+.card-html:nth-child(4n+3) .btn-card{
+    background-color: $btnCard3;
+}
+
+.card-html:nth-child(4n+4){
+    background-color: $colorCard4;
+}
+
+.card-html:nth-child(4n+4) .btn-card{
+    background-color: $btnCard4;
+}
+
+.card-image{
+    height: 350px;
+}
+
+img{
+    height: 100%;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.card-title{
+    font-size: 2em;
+    color: #1F455B;
+    font-weight: 500;
+}
+
+.footer-card{
+    width: 52%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10%;
+}
+
+.btn-card{
+    background-color: #5499C2;
+    color: white;
+    padding: 1% 2%;
+    border-radius: 3px;
+}
+
+table td{
+    box-shadow: none;
+}
+
+.td-logo-card{
+    width: 33% !important;
+}
+
+@media (max-width: 720px) {
+    .card-html{
+        margin-bottom: 7% ;
+    }
+}

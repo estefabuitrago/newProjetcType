@@ -1,32 +1,28 @@
+"use client";
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.css";
+import { Carousel } from "react-bootstrap";
 // import { api, resources } from "@/app/src/utils/sdk/";
 import { MenuUser, Button, IconoMouse, Card, Search, Footer } from '../../../components';
-// import SearchServiceComponent from '../../../../Components/SearchBar/index.js'
-import { Carousel } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.css";
-import { route, card } from '../../../theme'
-import SearchIcon from "@mui/icons-material/Search";
-// import Image from "next/image";
-
+import { service, card } from '../../../theme'
 // import parse from "html-react-parser";
 
-const Route = () => {
+const Service = () => {
   const [data, setData] = React.useState([]);
   const [article, setArticle] = useState([]);
   const [search, setSearch] = useState(true);
   const [values, setValues] = useState([]);
-  const [filter, setFilter] = useState("&tags=4");
+  const [filter, setFilter] = useState("?tags=1")
   const [mainCarrousel,setMainCarrousel]=useState([])
-  const [activeFilter,setActiveFilter]=useState(4)
+  const [activeFilter,setActiveFilter]=useState(1)
 
   const initialState = {
-    Naturaleza: false,
-    Aventura: false,
-    Cultura: false,
+    Hospedaje: false,
+    Restaurante: false,
+    Entretenimiento: false,
   };
   const getMainCarousel=async()=>{
-    const response= await api.get(`${resources.article}?category=2&tags=7`)
+    const response= await api.get(`${resources.article}?category=3&tags=7`)
     setMainCarrousel(response.data)
   }  
 
@@ -34,14 +30,10 @@ const Route = () => {
 
   const getArticle = async () => {
     let response;
-    response = await api.get(`${resources.article}?state=1&category=2${filter}`);
+    response = await api.get(`${resources.article}${filter}&state=1`);
     setArticle(response.data);
     setSearch(false);
   };
-
-  const link=(data)=>{
-    router.push("/src/jsx/components/dashboardUser/route#content")
-  }
 
   useEffect(() => {
     getMainCarousel();
@@ -55,78 +47,86 @@ const Route = () => {
     }));
   };
 
+  const handleContentHtml = (e) => {
+    const content = e.split("<p><!-- Ver más información --></p>")
+    return parse(content[0])
+  }
+
+  const link=()=>{
+    router.push("/src/jsx/components/dashboardUser/service#content")
+  }
+
   return (
     <div className="content-user">
       <div className="menu-component">
         <MenuUser />
       </div>
       <div className="carousel-container">
-      <Carousel style={{ width: '100%', height: '100vh' }}>
+        <Carousel style={{ width: '100%', height: '100vh' }}>
           {mainCarrousel.map((item,index)=>(
             <Carousel.Item key={index}>
             {parse(item.html)}
           </Carousel.Item>
           ))}          
         </Carousel>
-        <Button className="button-orange btn-carousel carousel-routes" onClick={()=>link()}>Ver rutas</Button>
+        <Button className="button-blue btn-carousel" onClick={()=>link()}>Ver servicios</Button>
         <IconoMouse />
       </div>
       <div id="content" className="content-below">
-        <h1 className="title">Rutas</h1>
-        <div className="category-route row" id="content">
+        <h1 className="title">Servicios</h1>
+        <div className="category-service row" id="content">
           <div className="col">
             <button
               className={`category-tags ${
-                buttonHovered.Naturaleza ? "hovered" : ""
-              } ${activeFilter===4 ? "activeFilterTags" : ''}`}
-              onMouseOver={() => handleButtonHover("Naturaleza", true)}
-              onMouseOut={() => handleButtonHover("Naturaleza", false)}
+                buttonHovered.Hospedaje ? "hovered" : ""
+              } ${activeFilter===1 ? "activeFilterTags" : ''}`}
+              onMouseOver={() => handleButtonHover("Hospedaje", true)}
+              onMouseOut={() => handleButtonHover("Hospedaje", false)}
               type="submit"
               onClick={() => {
-                let filtro = "&tags=4";
+                let filtro = "?tags=1";
                 setFilter(filtro);
-                setActiveFilter(4)
+                setActiveFilter(1)
               }}
             >
-              Naturaleza
+              Hospedaje
             </button>
           </div>
           <div className="col">
             <button
               className={`category-tags ${
-                buttonHovered.Aventura ? "hovered" : ""
-              } ${activeFilter===5 ? "activeFilterTags" : ''}`}
-              onMouseOver={() => handleButtonHover("Aventura", true)}
-              onMouseOut={() => handleButtonHover("Aventura", false)}
+                buttonHovered.Restaurante ? "hovered" : ""
+              } ${activeFilter===2 ? "activeFilterTags" : ''}`}
+              onMouseOver={() => handleButtonHover("Restaurante", true)}
+              onMouseOut={() => handleButtonHover("Restaurante", false)}
               type="submit"
               onClick={() => {
-                let filtro = "&tags=5";
+                let filtro = "?tags=2";
                 setFilter(filtro);
-                setActiveFilter(5)
+                setActiveFilter(2)
               }}
             >
-              Aventura
+              Restaurante
             </button>
           </div>
           <div className="col">
             <button
               className={`category-tags ${
-                buttonHovered.Cultura ? "hovered" : ""
-              } ${activeFilter===6 ? "activeFilterTags" : ''}`}
-              onMouseOver={() => handleButtonHover("Cultura", true)}
-              onMouseOut={() => handleButtonHover("Cultura", false)}
+                buttonHovered.Entretenimiento ? "hovered" : ""
+              } ${activeFilter===3 ? "activeFilterTags" : ''}`}
+              onMouseOver={() => handleButtonHover("Entretenimiento", true)}
+              onMouseOut={() => handleButtonHover("Entretenimiento", false)}
               type="submit"
               onClick={() => {
-                let filtro = "&tags=6";
+                let filtro = "?tags=3";
                 setFilter(filtro);
-                setActiveFilter(6)
+                setActiveFilter(3)
               }}
             >
-              Cultura
+              Entretenimiento
             </button>
           </div>
         </div>
-
         <Search
           placeholder="Buscar..."
           titulo="Búsqueda"
@@ -137,15 +137,16 @@ const Route = () => {
         <div className="row container-cards">
         {article.length > 0 ? (
             article.map((item, index) => (
-              <Card styles="col-lg-5 col-md-5 col-sm-12 card-html" buttonStyles="btn-card" textButton="Ver mas informacion" info={parse(item.html)} isSale={false}>{parse(item.html)}</Card>
+              <Card styles="col-lg-5 col-md-12 col-sm-12 col-sm-12 card-html" buttonStyles="btn-card" textButton="Ver mas informacion" isSale={false} info={parse(item.html)}>{handleContentHtml(item.html) }</Card>
               ))
           ) : (
             <h1>No hay artículos</h1>
-            )}
+              
+              )}
         </div>
       </div>
     </div>
   );
 };
 
-export default Route;
+export default Service;
