@@ -8,6 +8,8 @@ import Article from "../../screens/admin/Article"
 import FormArticle from "../../screens/admin/Article/NewArticle"
 import Users from "../../screens/admin/Users"
 import AddUser from "../../screens/admin/Users/NewUser"
+import ProfileAdmin from "../../screens/admin/Profile"
+import Company from "../../screens/admin/Company"
 
 export const navigate2=[
     {
@@ -49,6 +51,14 @@ export const navigate2=[
     {
         path: '/nuevoUsuario',
         component:<AddUser/>
+    },
+    {
+        path: '/perfilAdmin',
+        component:<ProfileAdmin/>
+    },
+    {
+        path: '/empresa',
+        component:<Company/>
     },
 ]
 

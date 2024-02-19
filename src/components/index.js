@@ -1,3 +1,8 @@
+import MenuUser from "./MenuUser";
+import { Search } from "./SearchBar"
+import { IconoMouse } from './IconoMouse'; 
+import { Card } from './Card'; 
+import { Footer } from './Footer'; 
 import MenuAdmin from "./MenuAdmin"
 import {CardsHome} from "./CardsHome"
 import {BtnSwitch} from "./Switch"
@@ -8,6 +13,11 @@ import { Alerts } from "./Alerts"
 export {
     MenuAdmin,
     CardsHome,
+    MenuUser,
+    Search,
+    IconoMouse, 
+    Card, 
+    Footer,
     BtnSwitch,
     ModalGeneral,
     Button,

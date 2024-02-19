@@ -2,7 +2,8 @@
   color: white;
   font-size: 2rem;
   font-weight: 500;
-  clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
   background-image: linear-gradient(to right, #EF7935, #ECA881);
   padding: 0% 2%;
   text-decoration: none;
@@ -12,7 +13,8 @@
   color: white;
   font-size: 2rem;
   font-weight: 500;
-  clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
   background-image: linear-gradient(to right, #4A9B64, #87A760);
   padding: 0% 2%;
   text-decoration: none;
@@ -22,7 +24,8 @@
   color: white;
   font-size: 2rem;
   font-weight: 500;
-  clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
   background-image: linear-gradient(to right, #18567F, #98BCE6);
   padding: 0% 2%;
   text-decoration: none;

@@ -9,7 +9,7 @@ export const CardsHome = ({title,Icon,link,style}) => {
                 </div>
                 <p>{title}</p>
             </div>
-            <p><Link className={`btn-quick-link${style}`} to="/rutas">Rutas</Link></p>
+            <p><Link className={`btn-quick-link${style}`} to={link}>Rutas</Link></p>
             {/* <Link className={`btn-quick-link${style}`} href={link}>Ir</Link> */}
             
         </div>
