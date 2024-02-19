@@ -1,0 +1,88 @@
+$ad-color:#55829E;
+$font-color:#5F656D;
+$terms-color:#045788;
+
+.request-agent{
+    padding: 10%;
+    background-color: white;
+    color: $font-color;
+}
+
+.ad-request,.col-3,.col-6{
+    text-align: center;
+}
+
+.ad-request{
+    background-color: $ad-color;
+    color: white;
+    padding: 1.5%;
+    border-radius: 10px;
+    font-size: 1.3rem;
+}
+
+.ad-request p, .terms-and-conditions p{
+    margin-bottom: 0;
+}
+
+.form-request{
+    margin-top: 5%;
+}
+
+.input-request{
+    width: 95%;
+}
+
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root{
+    left: -8px;
+}
+
+.form-request p{
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.terms-and-conditions{
+    display: flex;
+    align-items: center;
+}
+
+.terms-and-conditions p{
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    color: $terms-color;
+}
+
+.terms-and-conditions p:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.css-j204z7-MuiFormControlLabel-root{
+    margin-right: 0.5%;
+}
+
+.footer-request{
+    display: flex;
+    justify-content: end;
+}
+
+@media (max-width: 720px) {
+    .request-agent{
+        padding: 10% 5%;
+    }
+
+    .form-request .row{
+        margin-left: 0% !important;
+    }
+
+    .input-request{
+        width: 100%;
+    }
+
+    .MuiFormControl-root, .css-r47a1p-MuiFormControl-root{
+        margin: 0% 0% 10% 0%;
+    }
+}
