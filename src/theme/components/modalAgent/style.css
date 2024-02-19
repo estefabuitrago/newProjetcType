@@ -24,7 +24,8 @@
   color: white;
   font-size: 180%;
   font-weight: 500;
-  clip-path: polygon(0% 0%, 60% 0%, 58% 100%, 2% 100%);
+  -webkit-clip-path: polygon(0% 0%, 60% 0%, 58% 100%, 2% 100%);
+          clip-path: polygon(0% 0%, 60% 0%, 58% 100%, 2% 100%);
   background-image: linear-gradient(to right, #EF7935, #ECA881);
   margin-top: 0%;
   padding-left: 5%;

@@ -89,7 +89,7 @@ const MenuAdmin = () => {
             <Link className="link-menu" to="/usuarios"><PeopleAltOutlinedIcon className="icono" />{menu ? " Usuarios" : ""}</Link>
           </div>
           <div className="ul-menu">
-            <Link className="link-menu" to="/rutas"><AccountCircleOutlinedIcon className="icono" />{menu ? " Perfil" : ""}</Link>
+            <Link className="link-menu" to="/perfilAdmin"><AccountCircleOutlinedIcon className="icono" />{menu ? " Perfil" : ""}</Link>
           </div>
           <div className="ul-menu">
             <button className="btn-menu">
