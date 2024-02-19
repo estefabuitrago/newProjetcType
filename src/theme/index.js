@@ -9,6 +9,8 @@ import buttonTitle from './components/buttonTitle/style.css'
 import alerts from './components/alerts/style.css'
 import category from './admin/category/style.css'
 import article from './admin/article/style.css'
+import users from './admin/users/style.css'
+import profile from './admin/profile/style.css'
 
 export {
     homeAdmin,
@@ -21,5 +23,7 @@ export {
     buttonTitle,
     alerts,
     category,
-    article
+    article,
+    users,
+    profile
 }

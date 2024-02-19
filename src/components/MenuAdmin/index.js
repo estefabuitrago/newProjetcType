@@ -86,7 +86,7 @@ const MenuAdmin = () => {
             <Link className="link-menu" to="/publicaciones"><SourceIcon className="icono" />{menu ? " Publicaciones" : ""}</Link>
           </div>
           <div className="ul-menu">
-            <Link className="link-menu" to="/rutas"><PeopleAltOutlinedIcon className="icono" />{menu ? " Usuarios" : ""}</Link>
+            <Link className="link-menu" to="/usuarios"><PeopleAltOutlinedIcon className="icono" />{menu ? " Usuarios" : ""}</Link>
           </div>
           <div className="ul-menu">
             <Link className="link-menu" to="/rutas"><AccountCircleOutlinedIcon className="icono" />{menu ? " Perfil" : ""}</Link>
