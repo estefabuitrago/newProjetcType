@@ -19,6 +19,7 @@ import category from './admin/category/style.css'
 import article from './admin/article/style.css'
 import users from './admin/users/style.css'
 import profile from './admin/profile/style.css'
+import store from './user/sale/style.css'
 
 export {
     menuAdmin,
@@ -39,5 +40,6 @@ export {
     category,
     article,
     users,
-    profile
+    profile,
+    store
 }

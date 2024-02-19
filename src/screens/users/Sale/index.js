@@ -3,11 +3,12 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Image } from "react-bootstrap";
 import { Carousel, Modal } from "react-bootstrap";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import { sale, cardSale } from '../../../theme'
+import { store, cardSale } from '../../../theme'
 import { MenuUser, Button, Alerts, Card, Search, Footer } from '../../../components';
 import SelectAmount from "./selectAmount.js";
 // import imagenP from "@/app/src/Assets/img/tomioka.jpg";
 // import { api, resources } from "@/app/src/utils/sdk/";
+import { api,resources } from "../../../utils/sdk/index.js";
 // import { auth } from "@/app/src/Components/Auth/index";
 
 const Sale = (props) => {
@@ -99,12 +100,12 @@ const Sale = (props) => {
     }));
   };
 
-  useEffect(() => {
-    getProducts();
-    if (categoryProducts.length === 0) {
-      getCategoryProducts();
-    }
-  }, [active]);
+  // useEffect(() => {
+  //   getProducts();
+  //   if (categoryProducts.length === 0) {
+  //     getCategoryProducts();
+  //   }
+  // }, [active]);
 
   useEffect(() => {
     localStorage.setItem("shopCar", JSON.stringify(shop));

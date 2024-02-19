@@ -4,8 +4,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Carousel } from "react-bootstrap";
 import { MenuUser, Button, IconoMouse, Card, Footer } from '../../../components';
 import { homeUser } from '../../../theme'
-// import { api, resources } from "@/app/src/utils/sdk/";
 // import parse from "html-react-parser";
+import { api,resources } from '../../../utils/sdk';
 
 const Home = () => {
 //   const router = useRouter();
@@ -68,15 +68,15 @@ const Home = () => {
     }
   };
 
-  useEffect(() => {
-    if(miniCarousel.length===0){
-      getMiniCarousel()
-      console.log("vacio")
-    }
-      getNewsEvents();
-      getMainCarousel();
-      getVideo();
-  }, [active]);
+  // useEffect(() => {
+  //   if(miniCarousel.length===0){
+  //     getMiniCarousel()
+  //     console.log("vacio")
+  //   }
+  //     getNewsEvents();
+  //     getMainCarousel();
+  //     getVideo();
+  // }, [active]);
 
   console.log(miniCarousel)
 

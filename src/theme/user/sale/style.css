@@ -4,10 +4,11 @@
     position: relative;
     overflow: hidden;
 }
+
 .container-date {
     margin-top: 7%;
     background-color: black;
-    background-image: url('../../../Assets/img/store-img.jpeg');
+    background-image: url('../../../store-img.jpeg');
 }
 
 .btn-modal-products{
@@ -137,11 +138,11 @@
 }
 
 .carousel-products .carousel-control-next-icon{
-    background-image: url('../../../Assets/img/arrow-next.svg');
+    /* background-image: url('../../../Assets/img/arrow-next.svg'); */
 }
 
 .carousel-products .carousel-control-prev-icon{
-    background-image: url('../../../Assets/img/arrow-back.svg');
+    /* background-image: url('../../../Assets/img/arrow-back.svg'); */
 }
 
 .carousel-products .carousel-control-prev-icon,.carousel-products .carousel-control-next-icon{

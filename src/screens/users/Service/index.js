@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Carousel } from "react-bootstrap";
-// import { api, resources } from "@/app/src/utils/sdk/";
+import { api,resources } from "../../../utils/sdk";
 import { MenuUser, Button, IconoMouse, Card, Search, Footer } from '../../../components';
 import { service, card } from '../../../theme'
 // import parse from "html-react-parser";
@@ -35,10 +35,10 @@ const Service = () => {
     setSearch(false);
   };
 
-  useEffect(() => {
-    getMainCarousel();
-    getArticle();
-  }, [search, values, filter]);
+  // useEffect(() => {
+  //   getMainCarousel();
+  //   getArticle();
+  // }, [search, values, filter]);
 
   const handleButtonHover = (buttonName, isHovered) => {
     setButtonHovered((prev) => ({

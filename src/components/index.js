@@ -17,7 +17,7 @@ export {
     Search,
     IconoMouse, 
     Card, 
-    Footer
+    Footer,
     BtnSwitch,
     ModalGeneral,
     Button,
