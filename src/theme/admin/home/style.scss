@@ -66,7 +66,7 @@ $card3:#F8D4C0;
     border-radius: 10px;
     position: relative;
     height: 20vh;
-    margin-bottom: 5%;
+    margin: 5% 0% !important;
     @include center(flex,normal ,center,normal);
 }
 
@@ -75,7 +75,11 @@ $card3:#F8D4C0;
     height: 250px;
     position: absolute;
     bottom: 0.5px;
-    right: 0;
+    right: 3%;
+}
+
+.img-admin img{
+    height:100%;
 }
 
 .photo-user{
@@ -90,7 +94,6 @@ $card3:#F8D4C0;
     color: $font-title;
     font-size: 3em;
     font-weight: bold;
-    margin-left: 5%;
 }
 
 .profile-home{

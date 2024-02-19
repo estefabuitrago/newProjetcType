@@ -1,19 +1,25 @@
-import MenuAdmin from "./MenuAdmin";
-import { CardsHome } from "./CardsHome";
 import MenuUser from "./MenuUser";
-import { Button } from "./Button";
 import { Search } from "./SearchBar"
 import { IconoMouse } from './IconoMouse'; 
 import { Card } from './Card'; 
 import { Footer } from './Footer'; 
+import MenuAdmin from "./MenuAdmin"
+import {CardsHome} from "./CardsHome"
+import {BtnSwitch} from "./Switch"
+import { ModalGeneral } from "./ModalGeneral"
+import { Button } from "./Button"
+import { Alerts } from "./Alerts"
 
 export {
     MenuAdmin,
     CardsHome,
     MenuUser,
-    Button,
     Search,
     IconoMouse, 
     Card, 
     Footer
+    BtnSwitch,
+    ModalGeneral,
+    Button,
+    Alerts
 }
