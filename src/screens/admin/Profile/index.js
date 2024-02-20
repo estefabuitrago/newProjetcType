@@ -4,7 +4,7 @@ import { MenuAdmin } from "../../../components";
 import { profile } from "../../../theme";
 import { api,resources } from "../../../utils/sdk";
 // import { auth } from "@/app/src/Components/Auth/index";
-import PhotoUser from "../../../admin.png";
+import PhotoUser from "../../../assets/img/admin.png";
 import { Image } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 const ProfileAdmin = () => {

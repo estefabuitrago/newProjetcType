@@ -9,6 +9,8 @@ import {BtnSwitch} from "./Switch"
 import { ModalGeneral } from "./ModalGeneral"
 import { Button } from "./Button"
 import { Alerts } from "./Alerts"
+import { ModalAction } from "./ModalAction";
+import { ModalAgent } from "./ModalAgent";
 
 export {
     MenuAdmin,
@@ -21,5 +23,7 @@ export {
     BtnSwitch,
     ModalGeneral,
     Button,
-    Alerts
+    Alerts,
+    ModalAction,
+    ModalAgent
 }

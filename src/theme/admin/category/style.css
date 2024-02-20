@@ -48,6 +48,10 @@ input, select {
   margin: 0 auto;
 }
 
+button {
+  border: none;
+}
+
 .btn-delete {
   background: #93C567;
   color: white;

@@ -16,6 +16,7 @@ const Category = () => {
     try {
       const response = await api.get(`${resources.category}`);
       setCategories(response.data);
+      console.log("Categorias",response.data)
     } catch (error) {
       console.error("Error al cargar las categorías:", error);
     }

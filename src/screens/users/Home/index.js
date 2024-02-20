@@ -4,11 +4,10 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Carousel } from "react-bootstrap";
 import { MenuUser, Button, IconoMouse, Card, Footer } from '../../../components';
 import { homeUser } from '../../../theme'
-// import parse from "html-react-parser";
+import parse from "html-react-parser";
 import { api,resources } from '../../../utils/sdk';
 
 const Home = () => {
-//   const router = useRouter();
   const [mainCarrousel, setMainCarrousel] = useState([]);
   const [miniCarousel, setMiniCarousel] = useState([]);
   const [video, setVideo] = useState([]);
@@ -19,14 +18,14 @@ const Home = () => {
 
   const getMainCarousel = async () => {
     const response = await api.get(
-      `${resources.article}?category=1&tags=7&state=1`
+      `${resources.article}?category=4&tags=2&state=1`
     );
     setMainCarrousel(response.data);
   };
 
   const getMiniCarousel = async () => {
     const response = await api.get(
-      `${resources.article}?category=5&tags=7&state=1`
+      `${resources.article}?category=4&tags=3&state=1`
     );
     getListMiniCarousel(response.data);
     console.log(response.data);
@@ -43,7 +42,7 @@ const Home = () => {
   }
 
   const getVideo = async () => {
-    const response = await api.get(`${resources.article}?category=1&tags=8&state=1`);
+    const response = await api.get(`${resources.article}?category=5&tags=2&state=1`);
     setVideo(response.data);
   };
 
@@ -68,17 +67,15 @@ const Home = () => {
     }
   };
 
-  // useEffect(() => {
-  //   if(miniCarousel.length===0){
-  //     getMiniCarousel()
-  //     console.log("vacio")
-  //   }
-  //     getNewsEvents();
-  //     getMainCarousel();
-  //     getVideo();
-  // }, [active]);
-
-  console.log(miniCarousel)
+  useEffect(() => {
+    // if(miniCarousel.length===0){
+    //   getMiniCarousel()
+    //   console.log("vacio")
+    // }
+      // getNewsEvents();
+      getMainCarousel();
+      getVideo();
+  }, [active]);
 
   return (
     <div className="content-user">

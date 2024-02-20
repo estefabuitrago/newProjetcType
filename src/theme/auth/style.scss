@@ -1,0 +1,77 @@
+$color-title:#E17F49;
+
+@mixin title($margin){
+    color: $color-title;
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin: $margin;
+}
+
+.content-auth{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
+
+.content-auth .MuiFormControl-root {
+    margin: 0% 0% 5% 0%
+}
+
+.title-auth{
+    @include title(0% 0% 5% 0%);
+}
+
+.title-auth-login{
+    @include title(0% 0% 15% 0%);
+}
+
+.MuiFormControl-root,.css-r47a1p-MuiFormControl-root{
+    margin: 0% 0% 5% 0%;
+}
+
+.input-login{
+    margin-bottom: 10%;
+}
+
+.photo-auth,.form-auth{
+    height: 100%;
+}
+
+.photo-auth img{
+    height: 100vh;
+}
+
+.col-5{
+    background-color: white;
+}
+
+.form-auth{
+    text-align: center;
+    padding: 3% 10%;
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+    left: -9px;
+}
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+    padding: 16.5px 5px;
+}
+
+.btn-auth{
+    padding: 1% 5%;
+}
+
+.footer-auth{
+    margin-top: 5%;
+    border-top: 0.5px solid black;
+    padding-top: 3%;
+}
+
+.footer-auth a{
+    color: $color-title;
+}
+
+.link-auth:hover{
+    text-decoration: underline;
+}

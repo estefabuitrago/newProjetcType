@@ -6,22 +6,23 @@ import 'bootstrap/dist/css/bootstrap.css'
 // import PhotoUser from '@/app/src/Assets/img/user-profile.png'
 import { resources,api } from '../../../../utils/sdk'
 import { Alerts } from '../../../../components'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 
 const AddUser = () => {
     const [account,setAccount]=useState({state_id:1})
     const [showAlert,setShowAlert]=useState(0)
     const [selectTypeAccount,setSelectTypeAccount]=useState([])
     var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+    let navigate = useNavigate();
 
     const getTypeAccount=async()=>{
         const response= await api.get(`${resources.typeaccounts}`)
         setSelectTypeAccount(response.data)
     }
 
-    // useEffect(()=>{
-    //     getTypeAccount()
-    // },[])
+    useEffect(()=>{
+        getTypeAccount()
+    },[])
 
     const getAccount=async()=>{
         console.log(account)
@@ -35,8 +36,8 @@ const AddUser = () => {
                     await api.post(`${resources.account}`, account)
                     setShowAlert(1);
                     setTimeout(() => {
-                        router.push("/src/Page/Admin/Users/TableUsers")
-                    }, 2000);
+                      navigate("/usuarios");
+                    }, 3000);
                 }catch{
                     setShowAlert(2)
                     console.error("Error al hacer la solicitud PUT");
@@ -170,7 +171,6 @@ const AddUser = () => {
             <Link className="btn-uptade" to="/usuarios">
               Volver
             </Link>
-            {/* <button className='btn-uptade' onClick={()=>router.push("/src/jsx/components/dashboardAdmin/users/")}>Volver</button> */}
           </div>
         </div>
       </div>

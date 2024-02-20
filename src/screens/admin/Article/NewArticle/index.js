@@ -5,7 +5,7 @@ import { resources,api } from '../../../../utils/sdk'
 import CreatableSelect from "react-select/creatable";
 import "bootstrap/dist/css/bootstrap.css";
 import { Alerts } from "../../../../components";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { MenuAdmin } from "../../../../components"
 // import { auth } from "@/app/src/Components/Auth";
 
@@ -18,6 +18,7 @@ const FormArticle = () => {
   const [article, setArticle] = useState({
     state: 1,
   });
+  let navigate = useNavigate();
 
   const [text, setText] = useState("");
   const [category, setCategory] = useState([]);
@@ -25,15 +26,15 @@ const FormArticle = () => {
   const editorRef = useRef(null);
   let getTemplate = [];
 
-//   useEffect(() => {
-//     if (idTemplate != undefined) {
-//       getTemplate = templates.filter((item) => item.id == idTemplate);
-//       setValue(getTemplate[0].html);
-//       console.log(idTemplate);
-//     }
-//     getCategory();
-//     getTags();
-//   }, [idTemplate]);
+  useEffect(() => {
+    if (idTemplate != undefined) {
+      getTemplate = templates.filter((item) => item.id == idTemplate);
+      setValue(getTemplate[0].html);
+      console.log(idTemplate);
+    }
+    getCategory();
+    getTags();
+  }, [idTemplate]);
 
   const getCategory = async () => {
     const response = await api.get(`${resources.category}`);
@@ -58,7 +59,7 @@ const FormArticle = () => {
         .then((response) => {
           setShowAlert(1);
           setTimeout(() => {
-            router.push("/src/Page/Admin/Article/TablesArticle");
+            navigate("/publicaciones");
           }, 3000);
         })
         .catch((error) => {

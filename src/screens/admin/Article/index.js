@@ -1,61 +1,63 @@
-import React,{useState,useEffect} from "react";
-import { BtnSwitch,MenuAdmin } from "../../../components"
-import "bootstrap/dist/css/bootstrap.css"
-import { resources,api } from '../../../utils/sdk'
-import ReactPaginate from "react-paginate"
+import React, { useState, useEffect } from "react";
+import { BtnSwitch, MenuAdmin } from "../../../components";
+import "bootstrap/dist/css/bootstrap.css";
+import { resources, api } from "../../../utils/sdk";
+import ReactPaginate from "react-paginate";
 import { article } from "../../../theme";
 import { Link } from "react-router-dom";
 
 const Article = () => {
-    const [articles, setArticles] = useState([]);
-    const [categories, setCategories] = useState([]);
-    const [tags, setTags] = useState([]);
-    const [pageNumber, setPageNumber] = useState(0);
-    const articlesPerPage = 5;
-    const [articleStates, setArticleStates] = useState({});
-    const [getArticle, setGetArticle] = useState();  
-    const [request,setRequest]=useState(false)
+  const [articles, setArticles] = useState([]);
+  const [inactiveArticles, setInactiveArticles] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [tags, setTags] = useState([]);
+  const [pageNumber, setPageNumber] = useState(0);
+  const articlesPerPage = 5;
+  const [request, setRequest] = useState(false);
+  const [allArticles, setAllArticles] = useState();
 
-//   const getArticles = async () => {
-//     const response = await api.get(`${resources.article}?state=1`);
-//     setArticles(response.data);
-//   };
+  const getAllArticles = async () => {
+    const response = await api.get(`${resources.article}`);
+    setAllArticles(response.data);
+  };
 
-//   const getCategories = async () => {
-//     const response = await api.get(`${resources.category}`);
-//     setCategories(response.data);
-//   };
+  const getActiveArticles = async () => {
+    const response = await api.get(`${resources.article}?state=1`);
+    setArticles(response.data);
+  };
 
-//   const getTags = async () => {
-//     const response = await api.get(`${resources.tags}`);
-//     setTags(response.data);
-//   };
+  const getInactiveArticles = async () => {
+    const response = await api.get(`${resources.article}?state=2`);
+    setInactiveArticles(response.data);
+  };
 
-//   useEffect(() => {
-//     getArticles()
-//     getCategories()
-//     getTags()
-//   }, []);
+  const getCategories = async () => {
+    const response = await api.get(`${resources.category}`);
+    setCategories(response.data);
+  };
+
+  const getTags = async () => {
+    const response = await api.get(`${resources.tags}`);
+    setTags(response.data);
+  };
 
   const handleSwitchChange = async (articleId) => {
     try {
-      const currentState = articles.filter((item) => item.id == articleId);
-      setGetArticle(currentState[0]);
+      const currentState = allArticles.filter((item) => item.id == articleId);
       let stateArticle = currentState[0].state;
+      console.log(stateArticle);
       if (currentState[0].state === 1) {
         stateArticle = 2;
       } else {
         stateArticle = 1;
       }
       currentState[0].state = stateArticle;
-      setArticleStates(currentState[0]);
-
       const response = await api.put(
         `${resources.article}${articleId}/`,
         currentState[0]
       );
-      setGetArticle(() => getArticles);
-      getArticle();
+      getActiveArticles();
+      getInactiveArticles();
     } catch (error) {
       console.error(
         `Error al actualizar el estado en la API para el artículo ${articleId}:`,
@@ -79,8 +81,24 @@ const Article = () => {
     return tagNames.join(", ");
   };
 
+  useEffect(() => {
+    getActiveArticles();
+    getCategories();
+    getTags();
+    getInactiveArticles();
+    getAllArticles();
+  }, []);
+
   const pageCount = Math.ceil(articles.length / articlesPerPage);
   const displayedArticles = articles.slice(
+    pageNumber * articlesPerPage,
+    (pageNumber + 1) * articlesPerPage
+  );
+
+  const pageInactiveCount = Math.ceil(
+    inactiveArticles.length / articlesPerPage
+  );
+  const displayedInactiveArticles = inactiveArticles.slice(
     pageNumber * articlesPerPage,
     (pageNumber + 1) * articlesPerPage
   );
@@ -91,6 +109,7 @@ const Article = () => {
 
   const getCurrentPage = pageNumber + 1;
   const pageSeparator = " - ";
+
   return (
     <div className="content">
       <div className="menu-component">
@@ -101,13 +120,10 @@ const Article = () => {
           <p>Publicaciones</p>
         </div>
         <div className="info-articles">
-          <div className="form-add">
-            <Link className="btn-article btn-add" to='/agregarArticulo'>Agregar publicacion</Link> 
-          </div>
-          <div>
-            <select className="filter">
+          <div className="div-filter">
+            {/* <select className="filter">
               <option>Filtrar</option>
-              {/* {category.map((item, index) => (
+              {category.map((item, index) => (
                         <option
                         onClick={() => {
                             setCategory();
@@ -116,8 +132,8 @@ const Article = () => {
                         >
                         {item.name}
                         </option>
-                    ))} */}
-            </select>
+                    ))}
+            </select> */}
           </div>
           <div className="info-users">
             <div className="filter-users">
@@ -133,8 +149,11 @@ const Article = () => {
               >
                 Inactivos
               </button>
-              {/* <Link className={`btn-filter-user ${request ? "" : "active-filter"}`}  onClick={() => setRequest(false)} href={routers.articlesAdmin}>Publicaciones</Link> */}
-              {/* <Link className={`btn-filter-user ${request ? "active-filter" : ""}`}  onClick={() => setRequest(true)} href={routers.tableRequestArticle}>Inactivos</Link> */}
+            </div>
+            <div className="form-add">
+              <Link className="btn-article btn-add" to="/agregarArticulo">
+                Agregar publicacion
+              </Link>
             </div>
             <div>
               {request ? (
@@ -157,7 +176,7 @@ const Article = () => {
                         <p>Estado</p>
                       </div>
                     </div>
-                    {articles.map((item, index) => (
+                    {displayedInactiveArticles.map((item, index) => (
                       <div key={index} className="row body-table">
                         <div className="col">
                           <p>{item.name}</p>
@@ -169,7 +188,12 @@ const Article = () => {
                           <p>{getTagsName(item.tags)}</p>
                         </div>
                         <div className="col">
-                          <button className="btn-article">Editar</button>
+                          <Link
+                            to={`/publicaciones/editar/${item.id}`}
+                            className="btn-article"
+                          >
+                            Editar
+                          </Link>
                         </div>
                         <div className="col">
                           <BtnSwitch
@@ -181,8 +205,6 @@ const Article = () => {
                       </div>
                     ))}
                   </div>
-
-                  {/* Paginado */}
                   <div className="pagination">
                     <span
                       className="pagination-arrow"
@@ -196,11 +218,11 @@ const Article = () => {
                     </span>
                     {getCurrentPage}
                     {pageSeparator}
-                    {pageCount}
+                    {pageInactiveCount}
                     <span
                       className="pagination-arrow"
                       onClick={() => {
-                        if (pageNumber < pageCount - 1) {
+                        if (pageNumber < pageInactiveCount - 1) {
                           setPageNumber(pageNumber + 1);
                         }
                       }}
@@ -248,8 +270,8 @@ const Article = () => {
                         </div>
                         <div className="col">
                           <Link
-                            className="btn-edit"
-                            href={`/src/Page/Admin/Article/${item.id}`}
+                            to={`/publicaciones/editar/${item.id}`}
+                            className="btn-article"
                           >
                             Editar
                           </Link>

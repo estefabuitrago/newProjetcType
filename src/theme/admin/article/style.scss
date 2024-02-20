@@ -22,6 +22,7 @@ $button-color:#fe9a61;
 
 .info-articles,.form{
     margin-top: 5%;
+    padding: 0% 3%;
 }
 
 .table-articles{
@@ -125,8 +126,21 @@ transition: right 0.5s;
     width: 100%;
     margin-left: 6%;
 }
+
+.div-filter{
+    text-align: right;
+}
+
 .filter {
     width: 40%;
     background: none;
     margin-top: 4%;
+}
+
+.pagination-arrow{
+    cursor: pointer;
+}
+
+.form-control,  .css-13cymwt-control{
+    border: none !important;
 }

@@ -2,7 +2,6 @@
 import React from 'react'
 import { CardsHome,MenuAdmin } from '../../../components';
 import { homeAdmin } from '../../../theme'
-// import ImgAdmin from '@/app/src/Assets/img/user4.jpg'
 import 'bootstrap/dist/css/bootstrap.css'
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import ListIcon from '@mui/icons-material/List';
@@ -13,7 +12,7 @@ import CategoryIcon from '@mui/icons-material/Category';
 import SourceIcon from '@mui/icons-material/Source';
 import GroupIcon from '@mui/icons-material/Group';
 import { Image } from 'react-bootstrap';
-import ImgAdmin from "../../../admin.png";
+import ImgAdmin from "../../../assets/img/admin.png";
 import { Link } from 'react-router-dom';
 
 const HomeAdmin = () => {
@@ -55,10 +54,10 @@ const HomeAdmin = () => {
                                             <CardsHome title='Empresa' Icon={<BusinessIcon/>} link="/empresa" style='1'/>  
                                         </div>
                                         <div className='col-lg-3 col-md-3 col-sm-4 card-quick-link'>
-                                            <CardsHome title='Tienda' Icon={<LocalGroceryStoreIcon/>} link="./store" style='2'/>  
+                                            <CardsHome title='Tienda' Icon={<LocalGroceryStoreIcon/>} link="/tiendaAdmin" style='2'/>  
                                         </div>
                                         <div className='col-lg-3 col-md-3 col-sm-10 card-quick-link'>
-                                            <CardsHome title='Categorias' Icon={<CategoryIcon/>} link="./category" style='3'/>  
+                                            <CardsHome title='Categorias' Icon={<CategoryIcon/>} link="/categorias" style='3'/>  
                                         </div>
                                     </div>
                                 </div>

@@ -23,24 +23,26 @@ const Inventory = () => {
     const [addImage,setAddImage]=useState(0)
     const [categories,setCategories]=useState([])
     const [otherCategories,setOtherCategories]=useState([])
+    const [categoria,setCategoria]=useState({name:"Activo"})
 
     const fetchProducts = async () => {
         try {
           const response = await api.get(`${resources.products}`);
           setProducts(response.data);
+          console.log("productos",response.data)
         } catch (error) {
           console.error("Error al cargar las categorías:", error);
         }
       };  
 
-    // const getCategories=async()=>{
-    //     try{
-    //         const response=await api.get(`${resources.categoriesProducts}`)
-    //         setCategories(response.data)
-    //     }catch{
-    //         console.log(error)
-    //     }
-    // }
+    const getCategories=async()=>{
+        try{
+            const response=await api.get(`${resources.categoriesProducts}`)
+            setCategories(response.data)
+        }catch{
+            console.log(error)
+        }
+    }
 
       const addFile=async(file)=>{
         setAddImage(1)
@@ -121,7 +123,7 @@ const Inventory = () => {
 
     useEffect(() => {
         fetchProducts()
-        // getCategories()
+        getCategories()
       }, []);
 
      const getEspecificProduct=(data)=>{
@@ -142,7 +144,7 @@ const Inventory = () => {
         <div className='menu-component'>
             <MenuAdmin/>      
         </div>
-        <div>
+        <div className='inventory'>
             <h1>Inventario</h1>
             <div className='col-12 text-right'>
                 <button className='btn-add-product' onClick={()=> setModal(true)}>Agregar producto <ControlPointIcon/></button>
@@ -178,7 +180,7 @@ const Inventory = () => {
                         <div className="close-button" onClick={closeModal}>
                             X
                         </div>
-                        <div className="row">
+                        <div className="row row-products">
                             <TextField 
                             onChange={(e)=> setProduct({...product,name:e.target.value})} id="outlined-basic" 
                             className="col-12 text-field-products" label="Nombre" variant="outlined" 
@@ -250,7 +252,7 @@ const Inventory = () => {
                         <div className="close-button" onClick={closeModal}>
                             X
                         </div>
-                        <div className="row">
+                        <div className="row row-products">
                             <TextField 
                                 value={especificProduct.name} 
                             onChange={(e)=> setEspecificProduct({...especificProduct,name:e.target.value})} 

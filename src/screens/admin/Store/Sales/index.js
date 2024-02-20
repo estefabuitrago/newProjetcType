@@ -4,7 +4,7 @@ import { sale } from '../../../../theme'
 import { Link } from 'react-router-dom';
 import { resources,api } from '../../../../utils/sdk'
 
-const Sale = () => {
+const SaleAdmin = () => {
 
     const [sales,setSales]=useState([])
 
@@ -73,4 +73,4 @@ const Sale = () => {
   );
 };
  
-export default Sale;
+export default SaleAdmin;

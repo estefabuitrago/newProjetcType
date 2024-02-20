@@ -4,7 +4,7 @@ import { MenuAdmin } from "../../../components";
 import "bootstrap/dist/css/bootstrap.css";
 import { profile } from "../../../theme";
 // import PhotoUser from "@/app/src/Assets/img/user3.jpg";
-import { api,resources } from "../../../utils/sdk";
+import { api, resources } from "../../../utils/sdk";
 
 const Company = () => {
   const [data, setData] = React.useState([]);
@@ -14,20 +14,18 @@ const Company = () => {
 
   const handleCompany = async () => {
     if (values.nit && values.name) {
-    try {
+      try {
         if (values.nit) {
-            // Si ya existe un ID, envía una solicitud PUT para actualizar los datos existentes
-            await api.put(`${resources.company}${values.id}/`, values);
-            console.log("Este es el value ",values)
-          } else { 
-            await api.post(`${resources.company}/`, values);
-          }
-      
-    } catch (e) {}
-} else {
-    alert("NIT y NOMBRE DE LA EMPRESA son campos obligatorios.");
-    console.log("Estoy en el error")
-  }
+          await api.put(`${resources.company}${values.id}/`, values);
+          console.log("Este es el value ", values);
+        } else {
+          await api.post(`${resources.company}/`, values);
+        }
+      } catch (e) {}
+    } else {
+      alert("NIT y NOMBRE DE LA EMPRESA son campos obligatorios.");
+      console.log("Estoy en el error");
+    }
   };
 
   const getCompany = async () => {
@@ -37,16 +35,16 @@ const Company = () => {
       setSearch(false);
     }
   };
-//   useEffect(() => {
-//     if (search) getCompany();
-//   }, []);
+  useEffect(() => {
+    if (search) getCompany();
+  }, []);
 
   return (
-    <div className='content'>
-    <div className='menu-component'>
-        <MenuAdmin/>      
-    </div>
-    <div className='home-admin'>
+    <div className="content">
+      <div className="menu-component">
+        <MenuAdmin />
+      </div>
+      <div className="home-admin">
         <div className="title">
           <p>Empresa</p>
         </div>
@@ -62,19 +60,18 @@ const Company = () => {
                 /> */}
               </div>
               <p className="name-user">Empresa</p>
-              
-              {values.lema && (
-              <div className="role-user">
-                <p>
-                  <b className="sub-title">Lema: </b> {values.lema}
-                </p>
-              </div>
-              )}
 
+              {values.lema && (
+                <div className="role-user">
+                  <p>
+                    <b className="sub-title">Lema: </b> {values.lema}
+                  </p>
+                </div>
+              )}
             </div>
             <div className="col-lg-9 col-md-12 col-sm-12 col-sm-12 info-user">
               <div className="row ">
-              <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-input">
+                <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-input">
                   <p className="sub-title">NIT</p>
                   <input
                     value={values.nit}
@@ -85,12 +82,12 @@ const Company = () => {
                   ></input>
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-input">
-                  <p className="sub-title">NOMBRE  DE LA EMPRESA</p>
+                  <p className="sub-title">NOMBRE DE LA EMPRESA</p>
                   <input
                     value={values.name}
                     type="text"
                     onChange={(e) =>
-                      setValues({ ...values, name: e.target.value }) 
+                      setValues({ ...values, name: e.target.value })
                     }
                   ></input>
                 </div>
@@ -184,7 +181,7 @@ const Company = () => {
           </button>
         </div>
       </div>
-      </div>
+    </div>
   );
 };
 
