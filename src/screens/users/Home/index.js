@@ -1,11 +1,17 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Carousel } from "react-bootstrap";
-import { MenuUser, Button, IconoMouse, Card, Footer } from '../../../components';
-import { homeUser } from '../../../theme'
+import {
+  MenuUser,
+  Button,
+  IconoMouse,
+  Card,
+  Footer,
+} from "../../../components";
+import { homeUser } from "../../../theme";
 import parse from "html-react-parser";
-import { api,resources } from '../../../utils/sdk';
+import { api, resources } from "../../../utils/sdk";
 
 const Home = () => {
   const [mainCarrousel, setMainCarrousel] = useState([]);
@@ -13,7 +19,7 @@ const Home = () => {
   const [video, setVideo] = useState([]);
   const [information, setInformation] = useState([]);
   const [active, setActive] = useState(true);
-  const [activeFilter,setActiveFilter]=useState(10);
+  const [activeFilter, setActiveFilter] = useState(10);
   let slider = [];
 
   const getMainCarousel = async () => {
@@ -35,31 +41,33 @@ const Home = () => {
     if (imgMiniCarousel.length != 0) {
       for (let i = 0; i < imgMiniCarousel.length; i += 4) {
         const grupoDeTres = imgMiniCarousel.slice(i, i + 4);
-        setMiniCarousel(miniCarousel => [...miniCarousel, grupoDeTres]);
+        setMiniCarousel((miniCarousel) => [...miniCarousel, grupoDeTres]);
       }
-    } 
-    setActive(!active)
-  }
+    }
+    setActive(!active);
+  };
 
   const getVideo = async () => {
-    const response = await api.get(`${resources.article}?category=5&tags=2&state=1`);
+    const response = await api.get(
+      `${resources.article}?category=5&tags=2&state=1`
+    );
     setVideo(response.data);
   };
 
-  const link = () => {
-    setActive(false);
-    router.push("/src/jsx/components/dashboardUser/home#content");
-  };
+  // const link = () => {
+  //   setActive(false);
+  //   router.push("/src/jsx/components/dashboardUser/home#content");
+  // };
 
   const getNewsEvents = async (filter) => {
-    if(filter===undefined){
-      setActiveFilter(10)
+    if (filter === undefined) {
+      setActiveFilter(10);
       const response = await api.get(
         `${resources.article}?category=6&tags=10&state=1`
       );
       setInformation(response.data);
-    }else{
-      setActiveFilter(filter)
+    } else {
+      setActiveFilter(filter);
       const response = await api.get(
         `${resources.article}?category=6&tags=${filter}&state=1`
       );
@@ -72,9 +80,9 @@ const Home = () => {
     //   getMiniCarousel()
     //   console.log("vacio")
     // }
-      // getNewsEvents();
-      getMainCarousel();
-      getVideo();
+    // getNewsEvents();
+    getMainCarousel();
+    getVideo();
   }, [active]);
 
   return (
@@ -88,7 +96,7 @@ const Home = () => {
             <Carousel.Item key={index}>{parse(item.html)}</Carousel.Item>
           ))}
         </Carousel>
-        <Button className="button-green btn-carousel" onClick={() => link()}>
+        <Button className="button-green btn-carousel" onClick={""}>
           Guia turistica
         </Button>
         <IconoMouse />
@@ -97,7 +105,9 @@ const Home = () => {
         <h1 className="title">Contenido</h1>
         <div className="video" id="content">
           {video.map((item, index) => (
-            <div key={index} className="body-video">{parse(item.html)}</div>
+            <div key={index} className="body-video">
+              {parse(item.html)}
+            </div>
           ))}
         </div>
         <p>Mira un poco acerca del municipio</p>
@@ -133,13 +143,21 @@ const Home = () => {
           <div className="filter-users">
             <button
               onClick={() => getNewsEvents(10)}
-              className={activeFilter===10 ? 'btn-filter-user-active':'btn-filter-user'}
+              className={
+                activeFilter === 10
+                  ? "btn-filter-user-active"
+                  : "btn-filter-user"
+              }
             >
               Noticias
             </button>
             <button
               onClick={() => getNewsEvents(9)}
-              className={activeFilter===9 ? 'btn-filter-user-active':'btn-filter-user'}
+              className={
+                activeFilter === 9
+                  ? "btn-filter-user-active"
+                  : "btn-filter-user"
+              }
             >
               Eventos
             </button>
