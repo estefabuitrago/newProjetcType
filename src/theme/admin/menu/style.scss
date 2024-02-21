@@ -87,7 +87,10 @@ $size-font:1.2rem;
 }
 
 .btn-menu{
-    background-color: none;
+    background-color: transparent;
+    border:none;
+    color: white;
+    padding: 0%;
 }
 
 @media (max-width: 700px) {

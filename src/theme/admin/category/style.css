@@ -1,0 +1,75 @@
+body {
+  background-color: #f6f6f6;
+  color: #5F656D;
+  font-size: 1.2rem;
+}
+
+.content {
+  background-color: #f6f6f6;
+}
+
+.profile {
+  padding: 2% 5%;
+  width: 100%;
+}
+
+.title {
+  font-size: 2.5rem;
+  border-bottom: 2px solid #0E5F8E;
+  color: #0E5F8E;
+}
+
+.sub-title {
+  padding-top: 8%;
+  display: inline-block;
+  color: #0E5F8E;
+  font-weight: 600;
+}
+
+input, select {
+  border-bottom: 2px solid #5F656D;
+  width: 100%;
+}
+
+.card-profile {
+  background-color: white;
+  margin-top: 5%;
+  padding: 3%;
+  border-radius: 10px;
+  display: flex;
+  margin: 50 auto;
+}
+
+.btn-create {
+  background: #fe9a61;
+  color: white;
+  padding: 1%;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+button {
+  border: none;
+}
+
+.btn-delete {
+  background: #93C567;
+  color: white;
+  padding: 2%;
+  border-radius: 10px;
+  margin: 5% 5% 5% 0;
+}
+
+.row {
+  width: 100%;
+}
+
+.body-table, .header-table {
+  margin-left: 0% !important;
+}
+
+@media (max-width: 991px) {
+  .role-user {
+    margin-top: 1%;
+  }
+}/*# sourceMappingURL=style.css.map */

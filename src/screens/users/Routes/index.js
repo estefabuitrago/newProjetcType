@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-// import { api, resources } from "@/app/src/utils/sdk/";
+import { api,resources } from "../../../utils/sdk";
 import { MenuUser, Button, IconoMouse, Card, Search, Footer } from '../../../components';
 // import SearchServiceComponent from '../../../../Components/SearchBar/index.js'
 import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import { route, card } from '../../../theme'
 import SearchIcon from "@mui/icons-material/Search";
-// import Image from "next/image";
-
 // import parse from "html-react-parser";
 
 const Route = () => {
@@ -43,10 +41,10 @@ const Route = () => {
     router.push("/src/jsx/components/dashboardUser/route#content")
   }
 
-  useEffect(() => {
-    getMainCarousel();
-    getArticle();
-  }, [search, values, filter]);
+  // useEffect(() => {
+  //   getMainCarousel();
+  //   getArticle();
+  // }, [search, values, filter]);
 
   const handleButtonHover = (buttonName, isHovered) => {
     setButtonHovered((prev) => ({

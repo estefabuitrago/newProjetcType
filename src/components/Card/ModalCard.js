@@ -1,5 +1,5 @@
 import React from "react";
-// import Modal from "react-modal";
+import Modal from "react-modal";
 import { Button } from '../index.js';
 import { homeUser, card, modalCard } from '../../theme'
 // import {modalCard} from '@/app/src/style/'
