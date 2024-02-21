@@ -2,8 +2,6 @@
 import React from 'react'
 import { CardsHome,MenuAdmin } from '../../../components';
 import { homeAdmin } from '../../../theme'
-// import ImageAdmin from '@/app/src/Assets/img/admin.png'
-// import PhotoUser from '@/app/src/Assets/img/user4.jpg'
 import 'bootstrap/dist/css/bootstrap.css'
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import ListIcon from '@mui/icons-material/List';
@@ -13,6 +11,9 @@ import BusinessIcon from '@mui/icons-material/Business';
 import CategoryIcon from '@mui/icons-material/Category';
 import SourceIcon from '@mui/icons-material/Source';
 import GroupIcon from '@mui/icons-material/Group';
+import { Image } from 'react-bootstrap';
+import ImgAdmin from "../../../assets/img/admin.png";
+import { Link } from 'react-router-dom';
 
 const HomeAdmin = () => {
     return ( 
@@ -29,8 +30,9 @@ const HomeAdmin = () => {
                         <div className='col-lg-8 col-md-12 col-sm-12'>
                             <div className='row'>
                                 <div className='col-12 user-home'>
-                                    <p className='text-welcome'>¡Bienvenido admin!</p>
+                                    <p className='col-9 text-welcome'>¡Bienvenido admin!</p>
                                     <div className='img-admin'>
+                                    <Image src={ImgAdmin} alt=''/>
                                         {/* <Image src={ImageAdmin} alt='' sizes="100vw"/> */}
                                     </div>
                                 </div>
@@ -41,21 +43,21 @@ const HomeAdmin = () => {
                                             <CardsHome title='Menus' Icon={<ListIcon/>} link="./menu" style='1'/>             
                                         </div>
                                         <div className='col-lg-3 col-md-3 col-sm-4 card-quick-link'>
-                                            <CardsHome title='Publicaciones' Icon={<SourceIcon/>} link="./article" style='2'/>  
+                                            <CardsHome title='Publicaciones' Icon={<SourceIcon/>} link="/publicaciones" style='2'/>  
                                         </div>
                                         <div className='col-lg-3 col-md-3 col-sm-4 card-quick-link'>
-                                            <CardsHome title='Usuarios' Icon={<PersonIcon/>} link="./users" style='3'/>  
+                                            <CardsHome title='Usuarios' Icon={<PersonIcon/>} link="/usuarios" style='3'/>  
                                         </div>
                                     </div>
                                     <div className='row quick-link'>
                                         <div className='col-lg-3 col-md-3 col-sm-4 card-quick-link'>
-                                            <CardsHome title='Empresa' Icon={<BusinessIcon/>} link="./company" style='1'/>  
+                                            <CardsHome title='Empresa' Icon={<BusinessIcon/>} link="/empresa" style='1'/>  
                                         </div>
                                         <div className='col-lg-3 col-md-3 col-sm-4 card-quick-link'>
-                                            <CardsHome title='Tienda' Icon={<LocalGroceryStoreIcon/>} link="./store" style='2'/>  
+                                            <CardsHome title='Tienda' Icon={<LocalGroceryStoreIcon/>} link="/tiendaAdmin" style='2'/>  
                                         </div>
                                         <div className='col-lg-3 col-md-3 col-sm-10 card-quick-link'>
-                                            <CardsHome title='Categorias' Icon={<CategoryIcon/>} link="./category" style='3'/>  
+                                            <CardsHome title='Categorias' Icon={<CategoryIcon/>} link="/categorias" style='3'/>  
                                         </div>
                                     </div>
                                 </div>
@@ -64,7 +66,7 @@ const HomeAdmin = () => {
                         <div className='col-lg-3 col-md-12 col-sm-12 col-sm-12 profile-home' >
                             <p className='title-info-home title-profile'>Perfil</p>
                             <div className='photo'>
-                                {/* <Image src={PhotoUser} alt='' sizes="100vw" className='photo-user'/> */}
+                                {/* <Image src={ImgAdmin} alt='' sizes="100vw" className='photo-user'/> */}
                             </div>
                             <p className='title-info-home'>Roger Meddows Taylor</p>
                             <button className='btn-quick-link3' onClick={() =>router.push("./profile")}>Ir al perfil</button>

@@ -1,0 +1,146 @@
+$font-title:#0E5F8E;
+$font-text:#0E5F8E;
+$backgroung:#f6f6f6;
+$font-size-table:20px;
+$button-color:#fe9a61;
+
+.content{
+    background-color: $backgroung;
+}
+
+.pageArticle,.form-add-article{
+    color: $font-text;
+    width: 85%;
+    font-size: $font-size-table;
+    padding: 2%;
+}
+
+.title{
+    font-size: 50px;
+    border-bottom: 2px solid $font-text ;
+}
+
+.info-articles,.form{
+    margin-top: 5%;
+    padding: 0% 3%;
+}
+
+.table-articles{
+    margin-top: 3%;
+}
+
+.header-table,.body-table{
+    text-align: center;
+    background: white;
+    margin-bottom: 1%;
+    padding: 1.5%;
+    border-radius: 10px;
+}
+
+.header-table{
+    font-weight: bold;
+}
+
+@mixin btnArticle($width,$padding){
+    background-color: $button-color;
+    color: white;
+    padding: $padding;
+    border-radius: 10px;
+    width: $width;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-article{
+    @include btnArticle(50%,2% 3%)
+}
+
+.btn-add{
+    @include btnArticle(15%,0.5%);
+}
+
+.btn-save{
+    @include btnArticle(10%,0.5%);
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+.form-add{
+    text-align: end;
+}
+
+.form-article{
+    margin-top: 5%;
+}
+
+.form-control{
+    margin-bottom: 3%;
+}
+
+.footer-add-article{
+    display: flex;
+    justify-content: right;
+}
+
+.btn-state {
+border-radius: 50px;
+position: relative;
+}
+
+// .active {
+// background-color: #93C567;
+// color: white;
+// padding: 1% 4% 1% 1%;
+// }
+
+.inactive {
+background-color: #F54C46;
+color: white;
+padding: 1% 1% 1% 4%;
+}
+
+.circle {
+width: 25px;
+height: 25px;
+background: white;
+border-radius: 50%;
+position: absolute;
+right: 5%;
+top: 6px;
+}
+
+.active .circle {
+right: 5%;
+transition: right 0.5s;
+}
+
+.inactive .circle {
+right: 75%;
+transition: right 0.5s;
+}
+
+.tags{
+    z-index: 100;
+}
+.search-article {
+    width: 100%;
+    margin-left: 6%;
+}
+
+.div-filter{
+    text-align: right;
+}
+
+.filter {
+    width: 40%;
+    background: none;
+    margin-top: 4%;
+}
+
+.pagination-arrow{
+    cursor: pointer;
+}
+
+.form-control,  .css-13cymwt-control{
+    border: none !important;
+}

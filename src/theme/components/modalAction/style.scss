@@ -1,0 +1,73 @@
+.modal-action {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2%;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    min-width: 35%;
+    min-height: 30%;
+    max-width: 50%;
+  }
+
+.titulo-modal{
+  background-color: orange;
+  color: white;
+  font-size: 180%;
+  font-weight: 500;
+  clip-path: polygon(0% 0%,60% 0%, 58% 100%, 2% 100%);
+  background-image: linear-gradient(to right, #EF7935, #ECA881); 
+  margin-top: 0%;
+  margin-bottom: 5%;
+}
+
+.text-accept{
+  text-align: center;
+  font-size: 2.5rem;
+  color: #26434D;
+}
+
+.btn-action{
+  background-color: #FE9A61;
+  font-size: 22px;
+  color: white;
+  border-radius: 5px;
+  padding: 1%;
+  margin-right: 5%;
+  align-items: flex-end;
+  justify-content: end;
+}
+
+.btn-actions{
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  margin-top: 5%;
+  width: 100%;
+  padding-top: 2%;
+}
+
+#rejectReason{
+  border: 0.5px solid gray;
+  border-radius: 5px;
+  width: 90%;
+  margin-left: 10%;
+}
+
+.rejectReason{
+  margin-left: 10%;
+}
+
+@media (max-width: 1366px) {
+  .titulo-modal {
+    clip-path: polygon(0% 0%, 85% 0%, 80% 100%, 5% 100%);
+    background-image: linear-gradient(to right, #EF7935, #ECA881); 
+    font-size: 170%; 
+  }
+}
+
+.MuiFormControl-root {
+  width: 100% !important;
+}
